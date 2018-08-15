@@ -1,0 +1,129 @@
+$color-lightest: #EFEBE9;
+$color-lighter: #D7CCC8;
+$color-light : #BCAAA4;
+$color-normal: #795548;
+$color-dark: #6D4C41;
+$color-darker : #5D4037;
+$color-darkest : #4E342E;
+
+/* animations */
+@keyframes spin {
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(360deg);}
+}
+
+body {
+  background-color: $color-lightest;
+  color: $color-darkest;
+  height: 100%;
+}
+
+#container {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+
+  #header {
+    font-size: 2.8rem;
+    margin-bottom: 10%;
+    margin-top: 5%;
+    text-shadow: 0px 0px 1px $color-light;
+    font-family: 'Titillium Web';
+    font-weight: 100;
+    text-align: center;
+
+    @media (max-width: 420px) {
+      font-size: 1.6rem;
+      margin-bottom: 5%;
+    }
+  }
+
+  #quote-box {
+    background-color: $color-lighter;
+    margin: 0px 15%;
+    padding: 20px;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    border: 1px solid $color-lighter;
+    border-radius: 3px;
+    box-shadow: 0px 0px 3px $color-dark;
+    font-family: 'Quicksand';
+    text-align: center;
+    position: relative;
+
+    @media (max-width: 420px) {
+      font-size: 1.3rem;
+      margin: 0px 5%;
+      overflow-y: auto;
+    }
+
+
+    #author {
+      text-align: right;
+      font-size: 1.1rem;
+      font-style: italic;
+      margin-top: 10px;
+      margin-right: 5%;
+
+    }
+
+    #links {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 5px;
+
+      a {
+        font-size: 1rem;
+        display: block;
+        text-decoration: none;
+        color: $color-normal;
+
+        &:hover{
+          color: $color-darkest;
+        }
+      }
+    }
+
+    #overlay {
+      position: absolute;
+      background-color: rgba(86, 46, 18,0.2);
+      height: 100%;
+      width: 100%;
+      top:0px;
+      left: 0px;
+
+
+      #loader {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -40px;
+        margin-top: -40px;
+        box-sizing: border-box;
+        border: 16px solid $color-lighter;
+        border-top: 16px solid $color-dark;
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        animation: spin 1s linear infinite;
+      }
+    }
+
+  }
+
+  #footer {
+    position: fixed;
+    bottom: 0px;
+
+    a {
+      text-decoration: none;
+      color: $color-darkest;
+    }
+  }
+}

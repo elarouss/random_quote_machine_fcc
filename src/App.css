@@ -1,0 +1,94 @@
+/* animations */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+
+body {
+  background-color: #EFEBE9;
+  color: #4E342E;
+  height: 100%; }
+
+#container {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column; }
+  #container #header {
+    font-size: 2.8rem;
+    margin-bottom: 10%;
+    margin-top: 5%;
+    text-shadow: 0px 0px 1px #BCAAA4;
+    font-family: 'Titillium Web';
+    font-weight: 100;
+    text-align: center; }
+    @media (max-width: 420px) {
+      #container #header {
+        font-size: 1.6rem;
+        margin-bottom: 5%; } }
+  #container #quote-box {
+    background-color: #D7CCC8;
+    margin: 0px 15%;
+    padding: 20px;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    border: 1px solid #D7CCC8;
+    border-radius: 3px;
+    box-shadow: 0px 0px 3px #6D4C41;
+    font-family: 'Quicksand';
+    text-align: center;
+    position: relative; }
+    @media (max-width: 420px) {
+      #container #quote-box {
+        font-size: 1.3rem;
+        margin: 0px 5%;
+        overflow-y: auto; } }
+    #container #quote-box #author {
+      text-align: right;
+      font-size: 1.1rem;
+      font-style: italic;
+      margin-top: 10px;
+      margin-right: 5%; }
+    #container #quote-box #links {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 5px; }
+      #container #quote-box #links a {
+        font-size: 1rem;
+        display: block;
+        text-decoration: none;
+        color: #795548; }
+        #container #quote-box #links a:hover {
+          color: #4E342E; }
+    #container #quote-box #overlay {
+      position: absolute;
+      background-color: rgba(86, 46, 18, 0.2);
+      height: 100%;
+      width: 100%;
+      top: 0px;
+      left: 0px; }
+      #container #quote-box #overlay #loader {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -40px;
+        margin-top: -40px;
+        box-sizing: border-box;
+        border: 16px solid #D7CCC8;
+        border-top: 16px solid #6D4C41;
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        animation: spin 1s linear infinite; }
+  #container #footer {
+    position: fixed;
+    bottom: 0px; }
+    #container #footer a {
+      text-decoration: none;
+      color: #4E342E; }
