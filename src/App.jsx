@@ -3,7 +3,19 @@ import React, {Component } from 'react';
 import {createStore, applyMiddleware} from 'redux';
 import {connect,Provider} from 'react-redux';
 import thunk from 'redux-thunk';
+import posed from 'react-pose';
 import './App.css';
+
+const config = {
+  visible: {
+    opacity: 1
+  },hidden: {
+    opacity: 0
+  }
+
+}
+
+const Box = posed.div(config);
 
 // Redux
 const SHOW_QUOTE = 'SHOW_QUOTE';
@@ -96,10 +108,12 @@ class Presentational extends Component {
     return(
       <main id="container">
         <header id="header">Random Quote Generator Machine</header>
+        <Box pose={this.props.loading? 'hidden': 'visible'}>
         <QuoteBox text={quote.content}
            author={quote.author}
           getNewQuote={this.props.getNewQuote}
           loading= {this.props.loading} />
+        </Box>
         <footer id="footer">
           by <a href="https://www.github.com/elarouss">Oussama El Arbaoui</a>
          &copy; 2018
